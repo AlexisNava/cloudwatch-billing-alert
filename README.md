@@ -17,8 +17,7 @@ terraform init
 ### Install the local modules
 
 ```sh
-terraform get cloudwatch-alert
-terraform get sms-email-alert
+terraform get
 ```
 
 ## Usage
