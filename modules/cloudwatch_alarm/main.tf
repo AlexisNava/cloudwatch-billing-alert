@@ -8,5 +8,4 @@ resource "aws_cloudwatch_metric_alarm" "cloudwatch_alarm" {
   statistic           = "Maximum"
   threshold           = var.threshold
   alarm_description   = "This metric alarm monitors the cost of the current resources every 6 hours"
-  unit                = "USD"
 }
