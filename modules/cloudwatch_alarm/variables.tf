@@ -3,7 +3,12 @@ variable "alarm_name" {
   type        = string
 }
 
-variable "threshold" {
-  description = "The threshold amount to activate the alarm"
+variable "usd_amount_threshold" {
+  description = "The USD amount threshold"
+  type        = string
+}
+
+variable "sms_enpoint" {
+  description = "Phone number to subscribe to the sms_cloudwatch_metrict_alert SNS Topic"
   type        = string
 }
