@@ -20,6 +20,10 @@ terraform init
 terraform get
 ```
 
+## Module Documentation
+
+- [billing_cloudwatch_alarm](./modules/billing_cloudwatch_alarm/README.md)
+
 ## Inputs
 
 | Name           | Description       | Type   | Default | Required |
@@ -30,4 +34,4 @@ terraform get
 
 ## License
 
-**terraform_modules** is licensed under [Apache License, Version 2.0](https://github.com/AlexisNava/terraform_modules/blob/master/LICENSE).
+**terraform_modules** is licensed under [Apache License, Version 2.0](./LICENSE).

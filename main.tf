@@ -4,8 +4,8 @@ provider "aws" {
   region     = "us-east-1"
 }
 
-module "cloudwatch_alarm" {
-  source      = "./modules/cloudwatch_alarm"
+module "billing_cloudwatch_alarm" {
+  source      = "./modules/billing_cloudwatch_alarm"
   alarm_name  = "Resources Expenses Metrict"
   threshold   = "1"
   sms_enpoint = var.sms_enpoint

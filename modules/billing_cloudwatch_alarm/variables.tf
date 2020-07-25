@@ -9,6 +9,6 @@ variable "usd_amount_threshold" {
 }
 
 variable "sms_enpoint" {
-  description = "Phone number to subscribe to the sms_cloudwatch_metrict_alert SNS Topic"
+  description = "Phone number to subscribe to the SMS alert"
   type        = string
 }
