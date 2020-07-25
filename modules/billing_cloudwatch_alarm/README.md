@@ -24,9 +24,16 @@ terraform get
 
 | Name           | Description       | Type   | Default | Required |
 | :---:          | :---:             | :---:  | :---:   | :---:    |
-| aws_access_key | AWS Access Key ID | string | -       | :heavy_check_mark: |
-| aws_secret_key | AWS Secret Access Key | string | -       | :heavy_check_mark: |
+| alarm_name | CloudWatch Alarm Name | string | -       | :heavy_check_mark: |
+| usd_amount_threshold | The USD amount threshold | string | -       | :heavy_check_mark: |
 | sms_enpoint | Phone number to subscribe to the SMS alert | string | -       | :heavy_check_mark: |
+
+## Outputs
+
+| Name                            | Description           |
+| :---:                           | :---:                 |
+| cloudwatch_alarm_alarm_name     | The alarm name for the billing_cloudwatch_alarm module   |
+| cloudwatch_alarm_period     | Period of time in seconds (6 hrs)   |
 
 ## License
 
