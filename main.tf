@@ -5,8 +5,8 @@ provider "aws" {
 }
 
 module "cloudwatch_alarm" {
-  source = "./modules/cloudwatch_alarm"
-
-  alarm_name = "Estimated Resources Cost"
-  threshold  = "60"
+  source      = "./modules/cloudwatch_alarm"
+  alarm_name  = "Resources Expenses Metrict"
+  threshold   = "1"
+  sms_enpoint = var.sms_enpoint
 }
