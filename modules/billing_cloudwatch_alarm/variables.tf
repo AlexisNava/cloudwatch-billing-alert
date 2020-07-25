@@ -3,7 +3,7 @@ variable "alarm_name" {
   type        = string
 }
 
-variable "usd_amount_threshold" {
+variable "threshold" {
   description = "The USD amount threshold"
   type        = string
 }
