@@ -1,6 +1,6 @@
-# cloudwatch-billing-alert
+# Terraform Modules
 
-Terreform module to create a new billing alert in AWS CloudWatch
+This projects is a collection of personal Terrafom Modules
 
 ## Requirements
 
@@ -20,26 +20,14 @@ terraform init
 terraform get
 ```
 
-## Usage
+## Inputs
 
-### Format
-
-```sh
-terraform fmt
-```
-
-### Plan
-
-```sh
-terraform plan
-```
-
-### Apply
-
-```sh
-terraform apply
-```
+| Name           | Description       | Type   | Default | Required |
+| :---:          | :---:             | :---:  | :---:   | :---:    |
+| aws_access_key | AWS Access Key ID | string | -       | :heavy_check_mark: |
+| aws_secret_key | AWS Secret Access Key | string | -       | :heavy_check_mark: |
+| sms_enpoint | Phone number to subscribe to the SMS alert | string | -       | :heavy_check_mark: |
 
 ## License
 
-_cloudwatch-billing-alert_ is licensed under [Apache License, Version 2.0](https://github.com/AlexisNava/cloudwatch-billing-alert/blob/master/LICENSE).
+**terraform_modules** is licensed under [Apache License, Version 2.0](https://github.com/AlexisNava/terraform_modules/blob/master/LICENSE).
