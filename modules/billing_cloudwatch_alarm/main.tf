@@ -6,7 +6,7 @@ resource "aws_sns_topic" "sms_cloudwatch_metrict_alert" {
   }
 }
 
-resource "aws_cloudwatch_metric_alarm" "cloudwatch_alarm" {
+resource "aws_cloudwatch_metric_alarm" "billing_cloudwatch_alarm" {
   alarm_name          = var.alarm_name
   comparison_operator = "GreaterThanOrEqualToThreshold"
   evaluation_periods  = "1"
