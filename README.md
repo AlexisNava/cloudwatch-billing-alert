@@ -23,7 +23,7 @@ terraform get
 ## Module Documentation
 
 - [billing_cloudwatch_alarm](./modules/billing_cloudwatch_alarm/README.md)
-- [s3_bucket_versioned](./modules/s3_bucket_versioned/README.md)
+- [s3_versioned_bucket](./modules/s3_versioned_bucket/README.md)
 
 ## Inputs
 
