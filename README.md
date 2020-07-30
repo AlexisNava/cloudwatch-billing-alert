@@ -28,8 +28,6 @@ terraform get
 
 | Name           | Description       | Type   | Default | Required |
 | :---:          | :---:             | :---:  | :---:   | :---:    |
-| aws_access_key | AWS Access Key ID | string | -       | :heavy_check_mark: |
-| aws_secret_key | AWS Secret Access Key | string | -       | :heavy_check_mark: |
 | sms_enpoint | Phone number to subscribe to the SMS alert | string | -       | :heavy_check_mark: |
 
 ## License
