@@ -13,5 +13,5 @@ module "billing_cloudwatch_alarm" {
 
 module "s3_versioned_bucket" {
   source      = "./modules/s3_versioned_bucket"
-  bucket_name = "terraform-modules-versioned-bucket"
+  bucket_name = "terraform-state-of-terraform-modules-project"
 }
