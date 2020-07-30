@@ -31,6 +31,14 @@ terraform get
 | :---:          | :---:             | :---:  | :---:   | :---:    |
 | sms_enpoint | Phone number to subscribe to the SMS alert | string | -       | :heavy_check_mark: |
 
+## Outputs
+
+| Name                            | Description           |
+| :---:                           | :---:                 |
+| terraform_state_of_terraform_modules_project_id     | ID of the S3 versioned bucket called terraform_state_of_terraform_modules_project   |
+| terraform_state_of_terraform_modules_project_arn     | ARN of the S3 versioned bucket called terraform_state_of_terraform_modules_project   |
+| terraform_state_of_terraform_modules_project_bucket_domain_name     | Bucket Domain Name of the S3 versioned bucket called the terraform_state_of_terraform_modules_project   |
+
 ## License
 
 **terraform_modules** is licensed under [Apache License, Version 2.0](./LICENSE).
