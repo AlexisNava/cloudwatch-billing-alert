@@ -1,5 +1,5 @@
 resource "aws_sns_topic" "sms_cloudwatch_metrict_alert" {
-  name         = "resource-expeses-alert"
+  name = "resource-expeses-alert"
 
   tags = {
     CloudWatchMetricAlarm = "Estimated Resources Cost"

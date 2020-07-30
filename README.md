@@ -23,14 +23,21 @@ terraform get
 ## Module Documentation
 
 - [billing_cloudwatch_alarm](./modules/billing_cloudwatch_alarm/README.md)
+- [s3_versioned_bucket](./modules/s3_versioned_bucket/README.md)
 
 ## Inputs
 
 | Name           | Description       | Type   | Default | Required |
 | :---:          | :---:             | :---:  | :---:   | :---:    |
-| aws_access_key | AWS Access Key ID | string | -       | :heavy_check_mark: |
-| aws_secret_key | AWS Secret Access Key | string | -       | :heavy_check_mark: |
 | sms_enpoint | Phone number to subscribe to the SMS alert | string | -       | :heavy_check_mark: |
+
+## Outputs
+
+| Name                            | Description           |
+| :---:                           | :---:                 |
+| terraform_state_of_terraform_modules_project_id     | ID of the S3 versioned bucket called terraform_state_of_terraform_modules_project   |
+| terraform_state_of_terraform_modules_project_arn     | ARN of the S3 versioned bucket called terraform_state_of_terraform_modules_project   |
+| terraform_state_of_terraform_modules_project_bucket_domain_name     | Bucket Domain Name of the S3 versioned bucket called the terraform_state_of_terraform_modules_project   |
 
 ## License
 
