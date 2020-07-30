@@ -1,6 +1,6 @@
-# s3_bucket_versioned
+# s3_versioned_bucket
 
-**s3_bucket_versioned** is a Terraform module that creates an S3 bucket versioned
+**s3_versioned_bucket** is a Terraform module that creates an S3 bucket versioned
 
 ## Requirements
 
@@ -24,17 +24,16 @@ terraform get
 
 | Name           | Description       | Type   | Default | Required |
 | :---:          | :---:             | :---:  | :---:   | :---:    |
-| alarm_name | CloudWatch Alarm Name | string | -       | :heavy_check_mark: |
-| usd_amount_threshold | The USD amount threshold | string | -       | :heavy_check_mark: |
-| sms_enpoint | Phone number to subscribe to the SMS alert | string | -       | :heavy_check_mark: |
+| bucket_name | The name of the versioned bucket | string | -       | :heavy_check_mark: |
 
 ## Outputs
 
 | Name                            | Description           |
 | :---:                           | :---:                 |
-| cloudwatch_alarm_alarm_name     | The alarm name for the billing_cloudwatch_alarm module   |
-| cloudwatch_alarm_period     | Period of time in seconds (6 hrs)   |
+| versioned_bucket_id     | ID of the versioned_bucket   |
+| versioned_bucket_arn     | ARN of the versioned_bucket   |
+| versioned_bucket_domain_name     | Bucket Domain Name of the versioned_bucket   |
 
 ## License
 
-**s3_bucket_versioned** is licensed under [Apache License, Version 2.0](https://github.com/AlexisNava/terraform_modules/blob/master/LICENSE).
+**s3_versioned_bucket** is licensed under [Apache License, Version 2.0](https://github.com/AlexisNava/terraform_modules/blob/master/LICENSE).
