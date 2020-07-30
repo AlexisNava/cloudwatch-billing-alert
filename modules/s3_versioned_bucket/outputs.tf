@@ -12,8 +12,3 @@ output "bucket_domain_name" {
   description = "Bucket Domain Name of the versioned_bucket"
   value       = aws_s3_bucket.versioned_bucket.bucket_domain_name
 }
-
-output "bucket_name" {
-  description = "Bucket Name of the versioned_bucket"
-  value       = aws_s3_bucket.versioned_bucket.name
-}
