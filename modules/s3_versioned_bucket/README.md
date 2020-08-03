@@ -30,9 +30,9 @@ terraform get
 
 | Name                            | Description           |
 | :---:                           | :---:                 |
-| bucket_id     | ID of the versioned_bucket   |
-| bucket_arn     | ARN of the versioned_bucket   |
-| bucket_domain_name     | Bucket Domain Name of the versioned_bucket   |
+| bucket_id     | ID of the versioned_s3_bucket   |
+| bucket_arn     | ARN of the versioned_s3_bucket   |
+| bucket_domain_name     | Bucket Domain Name of the versioned_s3_bucket   |
 
 ## License
 
