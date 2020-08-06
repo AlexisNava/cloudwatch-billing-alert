@@ -25,6 +25,8 @@ terraform get
 | Name           | Description       | Type   | Default | Required |
 | :---:          | :---:             | :---:  | :---:   | :---:    |
 | bucket_name | The name of the versioned bucket | string | -       | :heavy_check_mark: |
+| versioned_s3_bucket_tags | Tags for the versioned_s3_bucket resource | map(string) | -       | :heavy_check_mark: |
+| versioned_s3_bucket_lifecycle_rule_tags | Tags for the versioned_s3_bucket_lifecycle_rule resource | map(string) | -       | :heavy_check_mark: |
 
 ## Outputs
 
