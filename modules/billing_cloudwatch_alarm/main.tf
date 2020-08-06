@@ -1,9 +1,7 @@
 resource "aws_sns_topic" "sms_cloudwatch_metrict_alert" {
   name = "resource-expeses-alert"
 
-  tags = {
-    CloudWatchMetricAlarm = "Estimated Resources Cost"
-  }
+  tags = var.sms_cloudwatch_metrict_alert_tags
 }
 
 resource "aws_cloudwatch_metric_alarm" "billing_cloudwatch_alarm" {
@@ -18,9 +16,7 @@ resource "aws_cloudwatch_metric_alarm" "billing_cloudwatch_alarm" {
   alarm_description   = "This metric alarm monitors the cost of the current resources every 6 hours"
   alarm_actions       = [aws_sns_topic.sms_cloudwatch_metrict_alert.arn]
 
-  tags = {
-    SNSTopicAlert = aws_sns_topic.sms_cloudwatch_metrict_alert.name
-  }
+  tags = var.billing_cloudwatch_alarm_tags
 }
 
 resource "aws_sns_topic_subscription" "sms_cloudwatch_metrict_alert_subcription" {
