@@ -8,7 +8,23 @@ module "billing_cloudwatch_alarm" {
   source      = "./modules/billing_cloudwatch_alarm"
   alarm_name  = "Resources Expenses Metrict"
   threshold   = "1"
-  sms_enpoint = "${var.sms_enpoint}"
+  sms_enpoint = var.sms_enpoint
+
+  billing_cloudwatch_alarm_tags = {
+    "MadeBy"          = "alxmedium_administrator"
+    "MadeWith"        = "Terraform"
+    "Module/Resource" = "billing_cloudwatch_alarm"
+    "Project"         = "terraform_modules"
+    "SNSTopic"        = "resource-expeses-alert"
+  }
+
+  sms_cloudwatch_metrict_alert_tags = {
+    "CloudWatchMetric" = "Resources Expenses Metrict"
+    "MadeBy"           = "alxmedium_administrator"
+    "MadeWith"         = "Terraform"
+    "Module/Resource"  = "billing_cloudwatch_alarm"
+    "Project"          = "terraform_modules"
+  }
 }
 
 module "s3_versioned_bucket" {
