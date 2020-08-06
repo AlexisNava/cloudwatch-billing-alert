@@ -8,12 +8,42 @@ module "billing_cloudwatch_alarm" {
   source      = "./modules/billing_cloudwatch_alarm"
   alarm_name  = "Resources Expenses Metrict"
   threshold   = "1"
-  sms_enpoint = "${var.sms_enpoint}"
+  sms_enpoint = var.sms_enpoint
+
+  billing_cloudwatch_alarm_tags = {
+    "MadeBy"          = "alxmedium_administrator"
+    "MadeWith"        = "Terraform"
+    "Module/Resource" = "billing_cloudwatch_alarm"
+    "Project"         = "terraform_modules"
+    "SNSTopic"        = "resource-expeses-alert"
+  }
+
+  sms_cloudwatch_metrict_alert_tags = {
+    "CloudWatchMetric" = "Resources Expenses Metrict"
+    "MadeBy"           = "alxmedium_administrator"
+    "MadeWith"         = "Terraform"
+    "Module/Resource"  = "billing_cloudwatch_alarm"
+    "Project"          = "terraform_modules"
+  }
 }
 
 module "s3_versioned_bucket" {
   source      = "./modules/s3_versioned_bucket"
   bucket_name = "terraform-state-of-terraform-modules-project"
+
+  versioned_s3_bucket_tags = {
+    "MadeBy"          = "alxmedium_administrator"
+    "MadeWith"        = "Terraform"
+    "Module/Resource" = "s3_versioned_bucket"
+    "Project"         = "terraform_modules"
+  }
+
+  versioned_s3_bucket_lifecycle_rule_tags = {
+    "MadeBy"          = "alxmedium_administrator"
+    "MadeWith"        = "Terraform"
+    "Module/Resource" = "s3_versioned_bucket"
+    "Project"         = "terraform_modules"
+  }
 }
 
 resource "aws_s3_bucket_object" "terraform_state_object" {
@@ -23,8 +53,11 @@ resource "aws_s3_bucket_object" "terraform_state_object" {
   etag   = filemd5("./terraform.tfstate")
 
   tags = {
-    Bucket  = "terraform-state-of-terraform-modules-project"
-    Project = "terraform_modules"
+    "MadeBy"          = "alxmedium_administrator"
+    "MadeWith"        = "Terraform"
+    "Module/Resource" = "aws_s3_bucket_object"
+    "Project"         = "terraform_modules"
+    "S3Bucket"        = "terraform-state-of-terraform-modules-project"
   }
 }
 
@@ -35,7 +68,10 @@ resource "aws_s3_bucket_object" "terraform_state_backup_object" {
   etag   = filemd5("./terraform.tfstate.backup")
 
   tags = {
-    Bucket  = "terraform-state-of-terraform-modules-project"
-    Project = "terraform_modules"
+    "MadeBy"          = "alxmedium_administrator"
+    "MadeWith"        = "Terraform"
+    "Module/Resource" = "aws_s3_bucket_object"
+    "Project"         = "terraform_modules"
+    "S3Bucket"        = "terraform-state-of-terraform-modules-project"
   }
 }

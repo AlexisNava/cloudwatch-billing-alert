@@ -27,6 +27,8 @@ terraform get
 | alarm_name | CloudWatch Alarm Name | string | -       | :heavy_check_mark: |
 | usd_amount_threshold | The USD amount threshold | string | -       | :heavy_check_mark: |
 | sms_enpoint | Phone number to subscribe to the SMS alert | string | -       | :heavy_check_mark: |
+| sms_cloudwatch_metrict_alert_tags | Tags for the sms_cloudwatch_metrict_alert resource | map(string) | -       | :heavy_check_mark: |
+| billing_cloudwatch_alarm_tags | Tags for the billing_cloudwatch_alarm resource | map(string) | -       | :heavy_check_mark: |
 
 ## Outputs
 

@@ -19,16 +19,8 @@ resource "aws_s3_bucket" "versioned_s3_bucket" {
       days = 90
     }
 
-    tags = {
-      "Project"  = "terraform_modules"
-      "Module"   = "s3_versioned_bucket"
-      "Resource" = "versioned_s3_bucket_lifecycle_rule"
-    }
+    tags = var.versioned_s3_bucket_lifecycle_rule_tags
   }
 
-  tags = {
-    "Project"  = "terraform_modules"
-    "Module"   = "s3_versioned_bucket"
-    "Resource" = "versioned_s3_bucket"
-  }
+  tags = var.versioned_s3_bucket_tags
 }
