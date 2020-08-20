@@ -30,6 +30,7 @@ terraform get
 | Name           | Description       | Type   | Default | Required |
 | :---:          | :---:             | :---:  | :---:   | :---:    |
 | sms_enpoint | Phone number to subscribe to the SMS alert | string | -       | :heavy_check_mark: |
+| aws_region | The AWS Region where the resource will be created | string | us-east-1      | :x: |
 
 ## Outputs
 
