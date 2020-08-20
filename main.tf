@@ -1,7 +1,14 @@
 provider "aws" {
-  region = var.aws_region
+  region                  = "us-east-1"
   shared_credentials_file = "~/.aws/credentials"
   profile                 = "alxmedium_administrator"
+}
+
+provider "aws" {
+  region                  = "us-west-1"
+  shared_credentials_file = "~/.aws/credentials"
+  profile                 = "alxmedium_administrator"
+  alias                   = "west_provider"
 }
 
 module "billing_cloudwatch_alarm" {
