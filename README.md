@@ -1,6 +1,6 @@
 # Terraform Modules
 
-This project is a collection of personal Terrafom Modules
+This project is a collection of my personal Terraform Modules
 
 ## Requirements
 

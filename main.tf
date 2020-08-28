@@ -4,6 +4,13 @@ provider "aws" {
   profile                 = "alxmedium_administrator"
 }
 
+provider "aws" {
+  region                  = "us-west-1"
+  shared_credentials_file = "~/.aws/credentials"
+  profile                 = "alxmedium_administrator"
+  alias                   = "west_provider"
+}
+
 module "billing_cloudwatch_alarm" {
   source      = "./modules/billing_cloudwatch_alarm"
   alarm_name  = "Resources Expenses Metrict"

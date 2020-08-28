@@ -1,6 +1,0 @@
-# Folders
-.terraform
-
-# Files
-terraform.tfstate
-terraform.tfstate.backup
