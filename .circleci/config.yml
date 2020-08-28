@@ -15,7 +15,6 @@ jobs:
           command: |
             sudo npm i -g @semantic-release/changelog @semantic-release/git semantic-release
             semantic-release
-
 workflows:
   version: 2
 

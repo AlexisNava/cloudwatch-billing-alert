@@ -24,17 +24,21 @@ terraform get
 
 | Name           | Description       | Type   | Default | Required |
 | :---:          | :---:             | :---:  | :---:   | :---:    |
-| bucket_name | The name of the versioned bucket | string | -       | :heavy_check_mark: |
-| versioned_s3_bucket_tags | Tags for the versioned_s3_bucket resource | map(string) | -       | :heavy_check_mark: |
-| versioned_s3_bucket_lifecycle_rule_tags | Tags for the versioned_s3_bucket_lifecycle_rule resource | map(string) | -       | :heavy_check_mark: |
+| replicated_destination_bucket_name | Bucket name for the destination bucket | string | -       | :heavy_check_mark: |
+| replicated_destination_bucket_name_tags | Tags for the destination bucket | map(string) | -       | :heavy_check_mark: |
+| replicated_source_bucket_name | Bucket name for the source bucket | string | -       | :heavy_check_mark: |
+| replicated_source_bucket_tags | Tags for the source bucket | map(string) | -       | :heavy_check_mark: |
 
 ## Outputs
 
 | Name                            | Description           |
 | :---:                           | :---:                 |
-| bucket_id     | ID of the versioned_s3_bucket   |
-| bucket_arn     | ARN of the versioned_s3_bucket   |
-| bucket_domain_name     | Bucket Domain Name of the versioned_s3_bucket   |
+| source_bucket_id     | ID of the source_replicated_s3_bucket   |
+| source_bucket_arn     | ARN of the source_replicated_s3_bucket   |
+| source_bucket_domain_name     | Bucket Domain Name of the source_replicated_s3_bucket   |
+| destination_bucket_id     | ID of the destination_replicated_s3_bucket   |
+| destination_bucket_arn     | ARN of the destination_replicated_s3_bucket   |
+| destination_bucket_domain_name     | Bucket Domain Name of the destination_replicated_s3_bucket   |
 
 ## License
 
