@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/AlexisNava/terraform_modules/compare/v1.1.1...v1.2.0) (2020-08-29)
+
+
+### Features
+
+* Add cloud_front_for_s3_bucket module ([#14](https://github.com/AlexisNava/terraform_modules/issues/14)) ([9602e65](https://github.com/AlexisNava/terraform_modules/commit/9602e650d9e7b720b840abe6520b91d057c4a5b1))
+
 ## [1.1.1](https://github.com/AlexisNava/terraform_modules/compare/v1.1.0...v1.1.1) (2020-08-29)
 
 
