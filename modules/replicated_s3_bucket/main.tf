@@ -1,14 +1,14 @@
 provider "aws" {
   region                  = "us-east-1"
   shared_credentials_file = "~/.aws/credentials"
-  profile                 = "alxmedium_administrator"
+  profile                 = "terraform_modules_administrator"
   alias                   = "east_provider"
 }
 
 provider "aws" {
   region                  = "us-west-1"
   shared_credentials_file = "~/.aws/credentials"
-  profile                 = "alxmedium_administrator"
+  profile                 = "terraform_modules_administrator"
   alias                   = "west_provider"
 }
 
