@@ -11,29 +11,6 @@ provider "aws" {
   alias                   = "west_provider"
 }
 
-module "billing_cloudwatch_alarm" {
-  source      = "./modules/billing_cloudwatch_alarm"
-  alarm_name  = "Resources Expenses Metrict"
-  threshold   = "1"
-  sms_enpoint = var.sms_enpoint
-
-  billing_cloudwatch_alarm_tags = {
-    "MadeBy"          = "alxmedium_administrator"
-    "MadeWith"        = "Terraform"
-    "Module/Resource" = "billing_cloudwatch_alarm"
-    "Project"         = "terraform_modules"
-    "SNSTopic"        = "resource-expeses-alert"
-  }
-
-  sms_cloudwatch_metrict_alert_tags = {
-    "CloudWatchMetric" = "Resources Expenses Metrict"
-    "MadeBy"           = "alxmedium_administrator"
-    "MadeWith"         = "Terraform"
-    "Module/Resource"  = "billing_cloudwatch_alarm"
-    "Project"          = "terraform_modules"
-  }
-}
-
 module "s3_versioned_bucket" {
   source      = "./modules/s3_versioned_bucket"
   bucket_name = "terraform-state-of-terraform-modules-project"
@@ -78,6 +55,30 @@ resource "aws_s3_bucket_object" "terraform_state_backup_object" {
     "MadeBy"          = "alxmedium_administrator"
     "MadeWith"        = "Terraform"
     "Module/Resource" = "aws_s3_bucket_object"
+    "Project"         = "terraform_modules"
+    "S3Bucket"        = "terraform-state-of-terraform-modules-project"
+  }
+}
+
+module "replicated_s3_bucket" {
+  source      = "./modules/replicated_s3_bucket"
+
+  replicated_source_bucket_name = "terraform-modules-source-bucket"
+  
+  replicated_source_bucket_tags = {
+    "MadeBy"          = "alxmedium_administrator"
+    "MadeWith"        = "Terraform"
+    "Module/Resource" = "replicated_s3_bucket"
+    "Project"         = "terraform_modules"
+    "S3Bucket"        = "terraform-state-of-terraform-modules-project"
+  }
+  
+  replicated_destination_bucket_name = "terraform-modules-destination-bucket"
+  
+  replicated_destination_bucket_name_tags = {
+    "MadeBy"          = "alxmedium_administrator"
+    "MadeWith"        = "Terraform"
+    "Module/Resource" = "replicated_s3_bucket"
     "Project"         = "terraform_modules"
     "S3Bucket"        = "terraform-state-of-terraform-modules-project"
   }
