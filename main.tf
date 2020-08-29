@@ -22,33 +22,3 @@ module "s3_versioned_bucket" {
     "Project"         = "terraform_modules"
   }
 }
-
-resource "aws_s3_bucket_object" "terraform_state_object" {
-  bucket = module.s3_versioned_bucket.bucket_id
-  key    = "terraform.tfstate"
-  source = "./terraform.tfstate"
-  etag   = filemd5("./terraform.tfstate")
-
-  tags = {
-    "MadeBy"          = "alxmedium_administrator"
-    "MadeWith"        = "Terraform"
-    "Module/Resource" = "aws_s3_bucket_object"
-    "Project"         = "terraform_modules"
-    "S3Bucket"        = "terraform-state-of-terraform-modules-project"
-  }
-}
-
-resource "aws_s3_bucket_object" "terraform_state_backup_object" {
-  bucket = module.s3_versioned_bucket.bucket_id
-  key    = "terraform.tfstate.backup"
-  source = "./terraform.tfstate.backup"
-  etag   = filemd5("./terraform.tfstate.backup")
-
-  tags = {
-    "MadeBy"          = "alxmedium_administrator"
-    "MadeWith"        = "Terraform"
-    "Module/Resource" = "aws_s3_bucket_object"
-    "Project"         = "terraform_modules"
-    "S3Bucket"        = "terraform-state-of-terraform-modules-project"
-  }
-}
