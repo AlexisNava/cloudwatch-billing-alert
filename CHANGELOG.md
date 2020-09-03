@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/AlexisNava/terraform_modules/compare/v1.2.0...v1.3.0) (2020-09-03)
+
+
+### Features
+
+* Add networking module ([#15](https://github.com/AlexisNava/terraform_modules/issues/15)) ([aabce3e](https://github.com/AlexisNava/terraform_modules/commit/aabce3e700ee62e5bcd74244cb6f3911cad8cd72))
+
 # [1.2.0](https://github.com/AlexisNava/terraform_modules/compare/v1.1.1...v1.2.0) (2020-08-29)
 
 
