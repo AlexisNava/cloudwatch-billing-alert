@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/AlexisNava/terraform_modules/compare/v1.3.0...v1.4.0) (2020-09-09)
+
+
+### Features
+
+* Add ec2_instance module ([#16](https://github.com/AlexisNava/terraform_modules/issues/16)) ([52c3a8e](https://github.com/AlexisNava/terraform_modules/commit/52c3a8ef1d8e46aeb73ddf63f40ac4d761f20469))
+
 # [1.3.0](https://github.com/AlexisNava/terraform_modules/compare/v1.2.0...v1.3.0) (2020-09-03)
 
 
