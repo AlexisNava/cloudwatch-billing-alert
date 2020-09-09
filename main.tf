@@ -41,12 +41,12 @@ module "networking" {
     "Project"         = "terraform_modules"
     "Name"            = "terraform_modules_default_route_table"
   }
-  default_route_table_internet_gateway_tags = {
+  terraform_modules_vpc_internet_gateway_tags = {
     "MadeBy"          = "terraform_modules_administrator"
     "MadeWith"        = "Terraform"
     "Module/Resource" = "networking"
     "Project"         = "terraform_modules"
-    "Name"            = "terraform_modules_default_route_table_internet_gateway"
+    "Name"            = "terraform_modules_vpc_internet_gateway"
   }
   vpc_default_security_group_tags = {
     "MadeBy"          = "terraform_modules_administrator"
@@ -54,5 +54,84 @@ module "networking" {
     "Module/Resource" = "networking"
     "Project"         = "terraform_modules"
     "Name"            = "terraform_modules_default_security_group"
+  }
+  public_subnet_1_route_table_tags = {
+    "MadeBy"          = "terraform_modules_administrator"
+    "MadeWith"        = "Terraform"
+    "Module/Resource" = "networking"
+    "Project"         = "terraform_modules"
+    "Name"            = "terraform_modules_public_subnet_1_route_table"
+  }
+  public_subnet_2_route_table_tags = {
+    "MadeBy"          = "terraform_modules_administrator"
+    "MadeWith"        = "Terraform"
+    "Module/Resource" = "networking"
+    "Project"         = "terraform_modules"
+    "Name"            = "terraform_modules_public_subnet_2_route_table"
+  }
+  public_subnet_1_tags = {
+    "MadeBy"          = "terraform_modules_administrator"
+    "MadeWith"        = "Terraform"
+    "Module/Resource" = "networking"
+    "Project"         = "terraform_modules"
+    "Name"            = "terraform_modules_public_subnet_1"
+  }
+  public_subnet_2_tags = {
+    "MadeBy"          = "terraform_modules_administrator"
+    "MadeWith"        = "Terraform"
+    "Module/Resource" = "networking"
+    "Project"         = "terraform_modules"
+    "Name"            = "terraform_modules_public_subnet_2"
+  }
+}
+
+resource "aws_security_group" "ubuntu_instance_security_group" {
+  name        = "ubuntu_instance_security_group"
+  description = "Security group for the terraform_modules_ec2_ubuntu_instance"
+  vpc_id      = module.networking.vpc_id
+
+  tags = {
+    "MadeBy"          = "terraform_modules_administrator"
+    "MadeWith"        = "Terraform"
+    "Module/Resource" = "aws_security_group"
+    "Project"         = "terraform_modules"
+    "Name"            = "terraform_modules_ubuntu_instance_security_group"
+  }
+
+  ingress {
+    protocol    = "tcp"
+    from_port   = 22
+    to_port     = 22
+    cidr_blocks = ["0.0.0.0/0"]
+    description = "Security Group Rule to enable SSH connection with a EC2 instance"
+  }
+
+  ingress {
+    protocol    = "tcp"
+    from_port   = 80
+    to_port     = 80
+    cidr_blocks = ["0.0.0.0/0"]
+    description = "Security Group Rule to enable HTTP connection with a EC2 instance"
+  }
+
+  egress {
+    protocol    = "-1"
+    from_port   = 0
+    to_port     = 0
+    cidr_blocks = ["0.0.0.0/0"]
+    description = "Security Group Rule to replicate the default AWS rule"
+  }
+}
+
+module "ec2_instance" {
+  source                          = "./modules/ec2_instance"
+  ubuntu_instance_security_groups = [aws_security_group.ubuntu_instance_security_group.id]
+  ubuntu_instance_subnet_id       = module.networking.public_subnet_1_id
+  ubuntu_instance_tags = {
+    "MadeBy"          = "terraform_modules_administrator"
+    "MadeWith"        = "Terraform"
+    "Module/Resource" = "ec2_instance"
+    "Project"         = "terraform_modules"
+    "Name"            = "terraform_modules_ec2_ubuntu_instance"
   }
 }
