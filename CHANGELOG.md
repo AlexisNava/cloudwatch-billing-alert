@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/AlexisNava/terraform_modules/compare/v1.4.0...v1.4.1) (2020-09-09)
+
+
+### Performance Improvements
+
+* Update the main README updating the module list ([#17](https://github.com/AlexisNava/terraform_modules/issues/17)) ([5dfaf1b](https://github.com/AlexisNava/terraform_modules/commit/5dfaf1b5d152e748047d4a0e68da632a2f36a54f))
+
 # [1.4.0](https://github.com/AlexisNava/terraform_modules/compare/v1.3.0...v1.4.0) (2020-09-09)
 
 
