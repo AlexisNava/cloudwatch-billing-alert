@@ -123,15 +123,39 @@ resource "aws_security_group" "ubuntu_instance_security_group" {
   }
 }
 
+data "aws_ami" "ubuntu_18_ami" {
+  most_recent = true
+
+  filter {
+    name   = "name"
+    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+
+  owners = ["099720109477"] # Canonical
+}
+
 module "ec2_instance" {
-  source                          = "./modules/ec2_instance"
-  ubuntu_instance_security_groups = [aws_security_group.ubuntu_instance_security_group.id]
-  ubuntu_instance_subnet_id       = module.networking.public_subnet_1_id
-  ubuntu_instance_tags = {
+  source                       = "./modules/ec2_instance"
+  ec2_instance_ami_id          = data.aws_ami.ubuntu_18_ami.id
+  ec2_instance_subnet_id       = module.networking.public_subnet_1_id
+  ec2_instance_security_groups = [aws_security_group.ubuntu_instance_security_group.id]
+  ec2_instance_tags = {
     "MadeBy"          = "terraform_modules_administrator"
     "MadeWith"        = "Terraform"
     "Module/Resource" = "ec2_instance"
     "Project"         = "terraform_modules"
     "Name"            = "terraform_modules_ec2_ubuntu_instance"
+  }
+  ec2_instance_volume_tags = {
+    "MadeBy"          = "terraform_modules_administrator"
+    "MadeWith"        = "Terraform"
+    "Module/Resource" = "ebs_volumen"
+    "Project"         = "terraform_modules"
+    "Name"            = "terraform_modules_ec2_instance_ebs_volume"
   }
 }

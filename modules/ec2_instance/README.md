@@ -24,10 +24,11 @@ terraform get
 
 | Name           | Description       | Type   | Default | Required |
 | :---:          | :---:             | :---:  | :---:   | :---:    |
-| ubuntu_instance_security_groups | List of the security groups for the ubuntu_instance | list(string) | -       | :heavy_check_mark: |
-| ubuntu_instance_subnet_id | Subnet Id for the ubuntu_instance | string | -       | :heavy_check_mark: |
-| ubuntu_instance_tags | Tags for ubuntu_instance_tags | map(string) | -       | :heavy_check_mark: |
-
+| ec2_instance_security_groups | List of the security groups for the ec2_instance | list(string) | -       | :heavy_check_mark: |
+| ec2_instance_subnet_id | Subnet Id for the ec2_instance | string | -       | :heavy_check_mark: |
+| ec2_instance_tags | Tags for ec2_instance | map(string) | -       | :heavy_check_mark: |
+| ec2_instance_volume_tags | Tags for ec2_instance_volume_tags | map(string) | -       | :heavy_check_mark: |
+| ec2_instance_ami_id | AMI Id for the ec2_instance | string | -       | :heavy_check_mark: |
 
 ## License
 
