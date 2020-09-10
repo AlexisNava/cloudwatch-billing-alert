@@ -1,6 +1,7 @@
 resource "aws_vpc" "vpc" {
-  cidr_block = "10.0.0.0/16"
-  tags       = var.vpc_tags
+  cidr_block           = "10.0.0.0/16"
+  enable_dns_hostnames = true
+  tags                 = var.vpc_tags
 }
 
 resource "aws_default_network_acl" "vpc_default_network_acl" {
@@ -10,7 +11,7 @@ resource "aws_default_network_acl" "vpc_default_network_acl" {
     protocol   = -1
     rule_no    = 100
     action     = "allow"
-    cidr_block = aws_vpc.vpc.cidr_block
+    cidr_block = "0.0.0.0/0"
     from_port  = 0
     to_port    = 0
   }
