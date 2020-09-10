@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/AlexisNava/terraform_modules/compare/v1.4.1...v1.4.2) (2020-09-10)
+
+
+### Bug Fixes
+
+* Update the vpc_default_network_acl ingress rule to accept trafic ([#18](https://github.com/AlexisNava/terraform_modules/issues/18)) ([5d63afc](https://github.com/AlexisNava/terraform_modules/commit/5d63afc6c01a91fb414260623f1522fa0a555fbf))
+
 ## [1.4.1](https://github.com/AlexisNava/terraform_modules/compare/v1.4.0...v1.4.1) (2020-09-09)
 
 
