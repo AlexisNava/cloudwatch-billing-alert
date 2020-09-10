@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/AlexisNava/terraform_modules/compare/v1.4.2...v1.5.0) (2020-09-10)
+
+
+### Features
+
+* Update ec2_instance module to receive ec2_instance_ami_id and ec2_instance_volume_tags values ([#19](https://github.com/AlexisNava/terraform_modules/issues/19)) ([84b00e1](https://github.com/AlexisNava/terraform_modules/commit/84b00e1734b3e073786752c90b837e6bc6c63315))
+
 ## [1.4.2](https://github.com/AlexisNava/terraform_modules/compare/v1.4.1...v1.4.2) (2020-09-10)
 
 
